@@ -1,11 +1,10 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { Scene, CharacterImage } from '../types';
 
-if (!process.env.API_KEY) {
-  throw new Error("API_KEY environment variable not set");
-}
+// تم وضع مفتاح الواجهة البرمجية الخاص بك هنا مباشرة.
+const API_KEY = "AIzaSyBXwGvYQcckGQIe1PcrPBP9XVPxaipl0zo";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const fileToGenerativePart = (base64: string, mimeType: string) => {
   return {
